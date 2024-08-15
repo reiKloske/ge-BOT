@@ -36,7 +36,7 @@ async def send_message(message: Message, user_message: str) -> None:
 
 
 # < Handling the startup of the bot >
-# Everytime bot goes online we can display in the console so we know that the bot is actually running
+# Everytime bot goes online we can display in the console, so we know that the bot is actually running
 @client.event
 async def on_ready() -> None:
     print(f'{client.user} is now running!')
@@ -58,6 +58,8 @@ async def on_message(message: Message) -> None:
     await send_message(message, user_message)
 
 # < Main Entry Point >
+
+
 def main() -> None:
     client.run(token=TOKEN)
 
