@@ -1,4 +1,5 @@
 from random import choice, randint
+from time import sleep
 
 
 def get_response(user_input: str) -> str:
@@ -12,6 +13,8 @@ def get_response(user_input: str) -> str:
         return 'OUT!'
     elif 'gamble' in lowered:
         chance = randint(1, 6)
+        print('Small chance I find you...')
+        sleep(2)
         if chance == 6:
             return 'GET OUT'
         else:
