@@ -1,74 +1,31 @@
-from typing import Final
-import os
+# GET OUT BOT!!!!!!!!!
+import discord
+from discord.ext import commands
 from dotenv import load_dotenv
-from discord import Intents, Client, Message
-from responses import get_response
+import os
 
-# < Load token from somewhere safe >
+# Loading Token from env file
 load_dotenv()
-TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
+TOKEN: str = os.getenv('DISCORD_TOKEN')
 
-# < Bot Setup >
-intents: Intents = Intents.default()
-intents.message_content = True  # NOQA
-client: Client = Client(intents=intents)
+# 'ge.' will be the prefix W GE-
+bot = commands.Bot(command_prefix="ge.", intents=discord.Intents.all())
 
 
-# < Message Functionality >
-async def send_message(message: Message, user_message: str) -> None:
-    if not user_message:
-        print('(Message was empty because intents were prob not enabled)')
-        return
-
-    # '?' Is used to private message the user
-    is_private = user_message[0] == '?'
-    is_public = user_message[0:3] == 'ge.'
-
-    if is_private:
-        # The message starts after the '?' ofc
-        user_message = user_message[1:]
-
-    if is_public:
-        user_message = user_message[3:]
-    try:
-        response: str = get_response(user_message)
-        # If the message is private '?' send response to Author DM - If public, send on channel.
-        if is_private:
-            await message.author.send(response)
-        if is_public:
-            await message.channel.send(response)
-    except Exception as e:
-        print(e)
+# Async function to load cogs/extensions
+async def load_extensions():
+    await bot.load_extension('commands.moderation')
+    await bot.load_extension('commands.basic')
+    await bot.load_extension('commands.settings')
+    await bot.load_extension('commands.admin')
 
 
-# < Handling the startup of the bot >
-# Everytime bot goes online we can display in the console, so we know that the bot is actually running
-@client.event
-async def on_ready() -> None:
-    print(f'{client.user} is now running!')
+# Run the bot with an event to see in the console W
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user.name} ({bot.user.id})')
+    await load_extensions()
 
 
-# < Handling incoming messages >
-@client.event
-async def on_message(message: Message) -> None:
-    # If the author of the message is the BOT itself, leave.
-    if message.author == client.user:
-        return
-
-    username: str = str(message.author)
-    user_message: str = message.content
-    channel: str = str(message.channel)
-
-    # Creating logging information
-    print(f'[{channel}] {username}: "{user_message}"')
-    await send_message(message, user_message)
-
-# < Main Entry Point >
-
-
-def main() -> None:
-    client.run(token=TOKEN)
-
-
-if __name__ == '__main__':
-    main()
+# Running bot token
+bot.run(TOKEN)
