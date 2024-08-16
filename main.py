@@ -32,11 +32,11 @@ async def send_message(message: Message, user_message: str) -> None:
         user_message = user_message[3:]
     try:
         response: str = get_response(user_message)
+        # If the message is private '?' send response to Author DM - If public, send on channel.
         if is_private:
             await message.author.send(response)
         if is_public:
             await message.channel.send(response)
-        # If the message is private '?' send response to Author DM - If NOT private, send on channel.
     except Exception as e:
         print(e)
 
