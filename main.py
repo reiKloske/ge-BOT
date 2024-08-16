@@ -22,15 +22,21 @@ async def send_message(message: Message, user_message: str) -> None:
 
     # '?' Is used to private message the user
     is_private = user_message[0] == '?'
+    is_public = user_message[0:3] == 'ge.'
 
     if is_private:
         # The message starts after the '?' ofc
         user_message = user_message[1:]
 
+    if is_public:
+        user_message = user_message[3:]
     try:
         response: str = get_response(user_message)
+        if is_private:
+            await message.author.send(response)
+        if is_public:
+            await message.channel.send(response)
         # If the message is private '?' send response to Author DM - If NOT private, send on channel.
-        await message.author.send(response) if is_private else await message.channel.send(response)
     except Exception as e:
         print(e)
 
