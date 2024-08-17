@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03c13584-0331-4d52-9c3b-25c84d7a65de" name="Changes" comment="Small tweaks to admin commands">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="03c13584-0331-4d52-9c3b-25c84d7a65de" name="Changes" comment="Settings command improvement&#10;- Showing Enabled/Disabled instead of True/False" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723855411742</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Settings command improvement&#10;- Showing Enabled/Disabled instead of True/False">
+      <option name="closed" value="true" />
+      <created>1723917164097</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723917164097</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +223,7 @@
     <MESSAGE value="Bot Utilities" />
     <MESSAGE value="Command handling changes - prefix change&#10;- Command is now used with specific words instead of finding certain word in string&#10;- Public prefix now changed to &quot;ge.&quot;" />
     <MESSAGE value="Small tweaks to admin commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small tweaks to admin commands" />
+    <MESSAGE value="Settings command improvement&#10;- Showing Enabled/Disabled instead of True/False" />
+    <option name="LAST_COMMIT_MESSAGE" value="Settings command improvement&#10;- Showing Enabled/Disabled instead of True/False" />
   </component>
 </project>

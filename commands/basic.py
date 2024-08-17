@@ -34,8 +34,8 @@ class Basic(commands.Cog):
         help_message = (
             "# < Available commands >\n"
             "## Admin:\n"
-            "- **ge.disable <command> - Disable the command\n"
-            "- **ge.enable <command> - Enable the command\n"
+            "- **ge.disable <command>** - Disable a command\n"
+            "- **ge.enable <command>** - Enable a command\n"
             "## Moderation:\n"
             "- **ge.ban <user> [reason]** - Bans the user\n"
             "- **ge.unban <user>** - Unbans the user\n"
