@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03c13584-0331-4d52-9c3b-25c84d7a65de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+    <list default="true" id="03c13584-0331-4d52-9c3b-25c84d7a65de" name="Changes" comment="Small tweaks to admin commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands/basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/checks.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/checks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723822272260</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Small tweaks to admin commands">
+      <option name="closed" value="true" />
+      <created>1723855411742</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723855411742</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bot Utilities" />
     <MESSAGE value="Command handling changes - prefix change&#10;- Command is now used with specific words instead of finding certain word in string&#10;- Public prefix now changed to &quot;ge.&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Command handling changes - prefix change&#10;- Command is now used with specific words instead of finding certain word in string&#10;- Public prefix now changed to &quot;ge.&quot;" />
+    <MESSAGE value="Small tweaks to admin commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small tweaks to admin commands" />
   </component>
 </project>
