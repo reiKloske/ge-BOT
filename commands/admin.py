@@ -7,15 +7,19 @@ class Admin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    # Async functions to handle multiple tasks at once
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def disable(self, ctx, command_name: str):
-        # If command name is found in the commands dictionary
+        # Prevent disabling settings or help commands
+        if command_name == 'settings' or command_name == 'help':
+            await ctx.send(f"Command '**{command_name}**' cannot be disabled.")
+            return  # If command name is found in the commands dictionary
         if command_name in enabled_commands:
             enabled_commands[command_name] = False
             await ctx.send(f"Command '**{command_name}**' has been disabled.")
-        if command_name == 'settings' or command_name == 'help':
-            await ctx.send(f"Command '**{command_name}**' cannot be disabled.")
+            return  # Exit after disabling the command
+        # If the command name was not found
         else:
             await ctx.send(f"No such command '**{command_name}**' found.")
 

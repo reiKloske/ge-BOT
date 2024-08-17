@@ -3,6 +3,7 @@ from time import sleep
 from random import randint
 from utils.checks import command_enabled
 
+
 class Basic(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

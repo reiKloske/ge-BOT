@@ -38,4 +38,3 @@ def command_enabled(command_name):
             return False
 
     return commands.check(predicate)
-
